@@ -38,7 +38,7 @@ public class CourseController {
     }
 
 
-    @PutMapping(value ="/{id}", produces = "application/json", consumes = "application/json")
+    @PutMapping(value = "/{id}", produces = "application/json", consumes = "application/json")
     public ResponseEntity<Course> updateCourse(@PathVariable int id, @RequestBody Course newCourse){
         boolean updated = courseService.updateCourse(id,newCourse);
         if (updated) {
@@ -48,7 +48,7 @@ public class CourseController {
         }
     }
 
-    @DeleteMapping(value= "{/id}", produces = "application/json")
+    @DeleteMapping(value = "/{id}", produces = "application/json")
     public ResponseEntity<Void> deleteCourse(@PathVariable int id){
     boolean deleted = courseService.deleteCourse(id);
     if(deleted){
